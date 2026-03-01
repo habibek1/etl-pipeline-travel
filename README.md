@@ -70,10 +70,10 @@ The DAG has been implemented but not deployed or tested in a live Airflow enviro
 
 ## Notes
 
-- 25% of search records have null selected_currency. This is expected, users are not required to select a currency before searching so no rows were dropped for this reason
-- 2,499 bookings were removed due to missing or invalid currency
-- 0 bookings were removed for invalid totals, all bookings had valid positive prices
+- 25% of search records have null selected_currency. This is expected, users are not required to select a currency before searching so no rows were dropped for this reason.
+- 2,499 bookings were removed due to missing or invalid currency.
+- 0 bookings were removed for invalid totals, all bookings had valid positive prices.
 
-- The pipeline runs in full replace mode by default. For daily incremental runs the mode can be switched to upsert which uses a BigQuery MERGE statement to update existing rows and insert new ones without reloading everything
+- The pipeline runs in full replace mode by default. For daily incremental runs the mode can be switched to upsert which uses a BigQuery MERGE statement to update existing rows and insert new ones without reloading everything.
 - Raw parquet files are manually uploaded to GCS before running the pipeline. The Airflow DAG handles the extract, transform and load steps from GCS to BigQuery.
-- In production credentials would be managed via GCP Secret Manager rather than environment variables
+- In production credentials would be managed via GCP Secret Manager rather than environment variables.
