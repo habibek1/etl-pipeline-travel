@@ -5,7 +5,7 @@ The pipeline reads 4 raw parquet files — bookings, searches, providers and air
 
 ## Data Flow
 ```
-Raw parquet files → GCS bucket → Extract → Transform → Load back to GCS → Load to BigQuery
+Raw parquet files → GCS bucket → Extract → Transform → Load to BigQuery
 ```
 
 ## The Tables
